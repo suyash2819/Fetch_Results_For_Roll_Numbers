@@ -29,6 +29,10 @@ function Home() {
 
     setLoader("set");
     data.forEach((rollnumber) => {
+      if (isNaN(parseInt(rollnumber))) {
+        alert("Enter Valid Roll Numbers");
+        break;
+      }
       getResults(parseInt(rollnumber));
     });
 
