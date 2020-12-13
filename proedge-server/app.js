@@ -14,6 +14,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", index);
 
+const root = require("path").join(__dirname, "build");
+app.use(express.static(root));
+app.get("/*", (req, res) => {
+  res.sendFile("index.html", { root });
+});
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
