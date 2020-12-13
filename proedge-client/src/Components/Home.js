@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { Container, Row, Spinner } from "react-bootstrap";
-
 import axios from "axios";
 import "../CSS/home.css";
 import Results from "./Results";
@@ -30,8 +28,8 @@ function Home() {
     setLoader("set");
     data.forEach((rollnumber) => {
       if (isNaN(parseInt(rollnumber))) {
-        alert("Enter Valid Roll Numbers");
-        break;
+        alert(rollnumber + " is not valid Roll Number");
+        return <Home />;
       }
       getResults(parseInt(rollnumber));
     });
