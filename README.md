@@ -17,7 +17,8 @@
     .request module to send request to the external api.
     .cors to allow cross origin sharing.
     
-4. 
+4. ![image](https://user-images.githubusercontent.com/28905722/102017689-6e4b2180-3d8e-11eb-95c1-71dd09ce6a80.png)
+
  
     
    
