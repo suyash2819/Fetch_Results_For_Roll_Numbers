@@ -17,8 +17,27 @@
     .request module to send request to the external api.
     .cors to allow cross origin sharing.
     
-4. ![image](https://user-images.githubusercontent.com/28905722/102017689-6e4b2180-3d8e-11eb-95c1-71dd09ce6a80.png)
+4.test case and screenshots
 
- 
+input : 5,6,9,12,18,20,25,30,32,36,37,38,40,42,45
+![image](https://user-images.githubusercontent.com/28905722/102017689-6e4b2180-3d8e-11eb-95c1-71dd09ce6a80.png)
+
+output
+![image](https://user-images.githubusercontent.com/28905722/102017731-b66a4400-3d8e-11eb-93bd-98f2f801cbea.png)
+
+input : hello,2,3,4
+![image](https://user-images.githubusercontent.com/28905722/102017775-ed405a00-3d8e-11eb-95ff-e95f5e805558.png)
+
+output
+![image](https://user-images.githubusercontent.com/28905722/102017791-034e1a80-3d8f-11eb-938d-baab2c2e2bc7.png)
+
+input : 6,7,8,90
+![image](https://user-images.githubusercontent.com/28905722/102017838-46a88900-3d8f-11eb-8e0e-a767676dedb3.png)
+
+output : 
+![image](https://user-images.githubusercontent.com/28905722/102017853-6b046580-3d8f-11eb-85aa-13c866eee77a.png)
+
+
+
     
    
