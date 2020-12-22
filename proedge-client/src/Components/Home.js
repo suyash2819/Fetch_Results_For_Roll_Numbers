@@ -10,10 +10,13 @@ function Home() {
   const [results, setResults] = useState(null);
   const [loader, setLoader] = useState("");
 
-  let promises = [];
-
-  const getResults = (rollnumber) => {
-    promises.push(axios.post("http://localhost:9000/", { rollnumber }));
+  const getResults = (data) => {
+    axios
+      .post("https://fetch-results.herokuapp.com/", { data })
+      .then((result) => {
+        setResults(result);
+        setLoader("unset");
+      });
   };
 
   const dataFilter = () => {
@@ -24,20 +27,8 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     var data = dataFilter();
-
+    getResults(data);
     setLoader("set");
-    data.forEach((rollnumber) => {
-      if (isNaN(parseInt(rollnumber))) {
-        alert(rollnumber + " is not valid Roll Number");
-        return <Home />;
-      }
-      getResults(parseInt(rollnumber));
-    });
-
-    Promise.all(promises).then((values) => {
-      setResults(values);
-      setLoader("unset");
-    });
   };
 
   if (loader === "set") {

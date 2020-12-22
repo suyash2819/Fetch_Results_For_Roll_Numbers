@@ -4,7 +4,7 @@ import "../CSS/results.css";
 
 const Results = (props) => {
   const { result } = props;
-  console.log(result);
+  const data = result.data;
   return (
     <>
       <center>
@@ -19,12 +19,21 @@ const Results = (props) => {
             </tr>
           </thead>
           <tbody>
-            {result.map((number) => (
-              <tr key={number.data.rollnumber}>
-                <td>{number.data.rollnumber}</td>
-                <td>{number.data.result}</td>
-              </tr>
-            ))}
+            {data.map((number) => {
+              if (number.status === "rejected") {
+                return (
+                  <tr key={number.rollnumber}>
+                    <td>{number.reason}</td>
+                  </tr>
+                );
+              }
+              return (
+                <tr key={number.rollnumber}>
+                  <td>{number.value.rollnumber}</td>
+                  <td>{number.value.result}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </center>
